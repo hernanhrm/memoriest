@@ -1,0 +1,22 @@
+{
+  "log_folder": "logs",
+  "env": "local",
+  "allowed_origins": [
+    "*"
+  ],
+  "allowed_methods": [
+    "POST",
+    "DELETE",
+    "PUT",
+    "GET"
+  ],
+  "databases": {
+    "postgres": {
+      "dbname": "memoriest",
+      "user": "memoriest",
+      "password": "memoriest",
+      "server": "http://127.0.0.1",
+      "port": 5432
+    }
+  }
+}
