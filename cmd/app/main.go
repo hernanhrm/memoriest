@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/hernanhrm/memoriest/config"
 	"github.com/hernanhrm/memoriest/driver/database"
 	"github.com/hernanhrm/memoriest/driver/http"
@@ -22,8 +23,8 @@ func Run() {
 	logger.InitLogger(conf.LogFolder, conf.Env == "local")
 	log.Info("Starting memoriest app")
 
-	app := http.InitFiber(conf)
-
+	// app := http.InitFiber(conf)
+	app := http.InitEcho()
 	err := database.GetPsqlConnection(conf)
 	if err != nil {
 		log.Fatalf("err connecting to psql database: %v", err)
@@ -32,8 +33,7 @@ func Run() {
 
 	router.Init(app, conf, db)
 
-	err = app.Listen(8080)
-	if err != nil {
-		log.Fatalf("err when starting the server: %v", err)
-	}
+	port := fmt.Sprintf(":%d", conf.PortHTTP)
+
+	log.Fatal(app.Start(port))
 }
