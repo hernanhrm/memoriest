@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"github.com/hernanhrm/memoriest/config"
+	_ "github.com/lib/pq"
 	"sync"
 )
 
@@ -16,7 +17,7 @@ var (
 func GetPsqlConnection(c config.Model) error {
 	once.Do(func() {
 		dns := fmt.Sprintf(
-			"postgres://%s:%s@%s:%d/%s?sslmode=disable",
+			"postgres://%s:%s@%s:%s/%s?sslmode=disable",
 			c.Databases["postgres"]["user"],
 			c.Databases["postgres"]["password"],
 			c.Databases["postgres"]["server"],

@@ -10,6 +10,11 @@ require (
 	github.com/gofiber/limiter v0.0.6
 	github.com/gofiber/logger v0.0.7
 	github.com/gofiber/recover v0.0.5
+	github.com/hernanhrm/dbexec v0.2.2
+	github.com/hernanhrm/dslparser v0.0.0-20200517203940-91a0ba466dbf
+	github.com/labstack/echo v3.3.10+incompatible
+	github.com/labstack/gommon v0.3.0 // indirect
+	github.com/lib/pq v1.5.2
 	github.com/orandin/lumberjackrus v1.0.1
 	github.com/sirupsen/logrus v1.6.0
 	github.com/spf13/viper v1.7.0

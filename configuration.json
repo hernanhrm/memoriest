@@ -1,6 +1,9 @@
 {
-  "log_folder": "logs",
+  "log_folder": "../../logs",
   "env": "local",
+  "cache_engine": "redis",
+  "primary_db_engine": "postgres",
+  "port_http": 8080,
   "allowed_origins": [
     "*"
   ],
@@ -15,7 +18,7 @@
       "dbname": "memoriest",
       "user": "memoriest",
       "password": "memoriest",
-      "server": "http://127.0.0.1",
+      "server": "127.0.0.1",
       "port": 5432
     }
   }

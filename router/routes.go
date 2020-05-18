@@ -2,11 +2,11 @@ package router
 
 import (
 	"database/sql"
-	"github.com/gofiber/fiber"
 	"github.com/hernanhrm/memoriest/config"
-	"github.com/hernanhrm/memoriest/internal/user/infrastructure/http"
+	tags "github.com/hernanhrm/memoriest/pkg/tags/infrastructure/controller"
+	"github.com/labstack/echo"
 )
 
-func Init(app *fiber.App, conf config.Model, db *sql.DB) {
-	http.User(app, conf, db)
+func Init(app *echo.Echo, conf config.Model, db *sql.DB) {
+	tags.Routes(app, conf, db)
 }
